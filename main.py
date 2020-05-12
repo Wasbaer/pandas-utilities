@@ -1,7 +1,7 @@
 import pandas as pd 
 import numpy as np 
 
-def load_df(url: string) -> pd.DataFrame:
+def load_df(url: str) -> pd.DataFrame:
     """A helper function to read data, print head and return data as a DataFrame
 
     Args:
