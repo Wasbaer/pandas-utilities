@@ -1,15 +1,29 @@
 import pandas as pd 
 import numpy as np 
 
-def load_df(url):
+def load_df(url: string) -> pd.DataFrame:
+    """A helper function to read data, print head and return data as a DataFrame
+
+    Args:
+        url (string): Location of csv
+
+    Returns:
+        pd.DataFrame: data as a DataFrame object
+    """
     df = pd.read_csv(url)
     print(df.head())
     return df 
 
 # taken from https://www.kaggle.com/gemartin/load-data-reduce-memory-usage
-def reduce_mem_usage(df):
-    """ iterate through all the columns of a dataframe and modify the data type
-        to reduce memory usage.        
+def reduce_mem_usage(df: pd.DataFrame) -> pd.DataFrame:
+    """iterate through all the columns of a dataframe and modify the data type
+        to reduce memory usage. 
+
+    Args:
+        df (pd.DataFrame): original DataFrame
+
+    Returns:
+        pd.DataFrame: DataFrame with reduced size 
     """
     start_mem = df.memory_usage().sum() / 1024**2
     print('Memory usage of dataframe is {:.2f} MB'.format(start_mem))
